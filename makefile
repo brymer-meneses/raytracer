@@ -26,7 +26,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cc
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 run: $(BIN_DIR)/$(EXEC)
-	@$(BIN_DIR)/$(EXEC)
+	@$(BIN_DIR)/$(EXEC) > build/image.ppm
+	open build/image.ppm
 
 clean:
 	@$(RM) -r $(BIN_DIR) $(OBJ_DIR)
